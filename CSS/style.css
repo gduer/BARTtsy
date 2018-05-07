@@ -1,11 +1,12 @@
 body {
     padding: 0;
     overflow: hidden;
-    font-family: 'Cinzel', serif;
+    font-family: 'Gothic A1', sans-serif;
 }
 
 p.main {
   font-size: 24px;
+  font-family: 'Gothic A1', sans-serif;
 }
 
 .sidebar {
@@ -19,6 +20,7 @@ p.main {
     padding: 20px;
     font-size: 16px;
     z-index: 100;
+    font-family: 'Gothic A1', sans-serif;
 }
 
 #map {
@@ -46,4 +48,20 @@ p.main {
 
   .animated-icon{
     transition: all 0.25s
+  }
+
+  .custom-popup{
+    font-size: 10px;
+    font-family: 'Gothic A1', sans-serif;
+    align-content: center;
+  }
+
+  #daytimes{
+    width: 100%;
+  }
+
+#weektimes {
+      width: 100% !important;
+      align-items: center;
+      font-weight: bold;
   }
