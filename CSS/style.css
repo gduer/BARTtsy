@@ -43,3 +43,7 @@ p.main {
     color: white;
     font-size: 20px;
   }
+
+  .animated-icon{
+    transition: all 0.25s
+  }

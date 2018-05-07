@@ -22,18 +22,19 @@ function consoleName(feature, layer) {
       console.log(layer.feature.properties.Code);//.morningPeak.EMBR);
       //stationFeatureGroup.setStyle({radius:  Math.sqrt(layer.feature.properties.Weekday.morningPeak.EMBR)*2});
       restyleLayer(layer.feature.properties.Code);
-      //this.setStyle({fillColor:"#f00"});
+      this.setStyle({fillColor:"#0f0", radius: 3});
     });
 }
 
 function restyleLayer(propertyName) {
 
     stationFeatureGroup.eachLayer(function(layer) {
-        if (layer.feature.properties.Weekday.morningPeak[propertyName] == undifined){radiusValue =  1;}
-        else { radiusValue = layer.feature.properties.Weekday.morningPeak[propertyName];}
+        if (layer.feature.properties.Weekday.morningPeak[propertyName] == undefined){radiusValue =  1;}
+        else { radiusValue = Math.sqrt(layer.feature.properties.Weekday.morningPeak[propertyName])*2;}
 
         layer.setStyle({
-            radius: radiusValue
+            radius: radiusValue,
+            fillColor:"#551A8B"
         });
     });
 }
@@ -45,7 +46,8 @@ var geojsonMarkerOptions = {
     color: "#000",
     weight: 2,
     opacity: 0.3,
-    fillOpacity: 0.6
+    fillOpacity: 0.6,
+    className: 'animated-icon'
 };
 
 $(document).ready(function() {
