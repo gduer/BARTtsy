@@ -1,4 +1,4 @@
-stations = "https://raw.githubusercontent.com/gduer/BARTtsy/master/bartData.json"
+stations = "https://raw.githubusercontent.com/gduer/BARTtsy/master/bartData.json";
 
 
 var map = L.map('map', {
