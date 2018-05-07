@@ -12,10 +12,49 @@ var Stamen_TonerLite = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/
   ext: 'png'
 }).addTo(map);
 
+function radiusFun(){
+  return 6;//feature.properties.Weekday.CIVC;
+}
+
+function consoleName(feature, layer) {
+    //bind click
+    layer.on('click', function (e) {
+      console.log(layer.feature.properties.Code);//.morningPeak.EMBR);
+      //stationFeatureGroup.setStyle({radius:  Math.sqrt(layer.feature.properties.Weekday.morningPeak.EMBR)*2});
+      restyleLayer(layer.feature.properties.Code);
+      //this.setStyle({fillColor:"#f00"});
+    });
+}
+
+function restyleLayer(propertyName) {
+
+    stationFeatureGroup.eachLayer(function(layer) {
+        if (layer.feature.properties.Weekday.morningPeak[propertyName] == undifined){radiusValue =  1;}
+        else { radiusValue = layer.feature.properties.Weekday.morningPeak[propertyName];}
+
+        layer.setStyle({
+            radius: radiusValue
+        });
+    });
+}
+
+
+var geojsonMarkerOptions = {
+    radius: 4,
+    fillColor: "#551A8B",
+    color: "#000",
+    weight: 2,
+    opacity: 0.3,
+    fillOpacity: 0.6
+};
 
 $(document).ready(function() {
   $.ajax(stations).done(function(data) {
       var parsedData = JSON.parse(data);
-      _.each(parsedData, function(item){ L.circleMarker([item.geometry.lat,item.geometry.lon]).addTo(map).bindPopup(item.Name);});
-});
-});
+      stationFeatureGroup = L.geoJson(parsedData, {
+        pointToLayer: function (feature, latlng) {
+            return L.circleMarker(latlng, geojsonMarkerOptions);},
+        onEachFeature: consoleName}).addTo(map);
+
+    });
+    });
