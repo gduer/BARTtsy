@@ -21,6 +21,17 @@ p.main {
     font-size: 16px;
     z-index: 100;
     font-family: 'Gothic A1', sans-serif;
+    -webkit-box-shadow: 1px 0 6px 0px  #999;
+    box-shadow: 1px 0 6px 0px #999;
+    overflow-y:hidden;
+}
+
+.btn-group.special {
+  display: flex;
+}
+
+.special .btn {
+  flex: 1
 }
 
 #map {
@@ -51,7 +62,7 @@ p.main {
   }
 
   .custom-popup{
-    font-size: 10px;
+    font-size: 11px;
     font-family: 'Gothic A1', sans-serif;
     align-content: center;
   }
@@ -73,7 +84,7 @@ p.main {
     }
 
   .mainControl{
-    height: 20%;
+    height: 22%;
     width: 100%;
     border-style: solid;
     border-radius: 6px;
@@ -83,7 +94,7 @@ p.main {
     -moz-box-shadow:    inset 0 0 10px #90a4ae;
     -webkit-box-shadow: inset 0 0 10px #90a4ae;
     box-shadow:         inset 0 0 10px #90a4ae;
-
+    margin-bottom: 15%;
   }
 
   #directionDropdown{
@@ -96,4 +107,69 @@ p.main {
 
 #stationName{
   padding:5%;
+}
+
+#timehr{
+  margin: 5px;
+}
+
+#titletext{
+  color:#757575;
+}
+
+#titlehr{
+  margin-bottom: 14%;
+  margin-top: -2%;
+}
+
+#clock{
+  text-align: center;
+}
+
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.strike > span {
+    position: relative;
+    display: inline-block;
+}
+
+.strike > span:before,
+.strike > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 0.7px;
+    background: #bdbdbd;
+}
+
+.strike > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.strike > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+#train{
+  color: #551A8B;
+}
+
+
+#git span {
+   position: absolute;
+   bottom: 5px;
+   opacity: 0.3;
+   color: black;
+}
+
+#bottom{
+  margin-top: 27%;
 }
