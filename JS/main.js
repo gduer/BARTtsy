@@ -178,9 +178,7 @@ map.on('click', function (e) {
   $('#stationName').css("font-weight", "normal");
   $('#stationName').css("font-size", "16px");
   stationFeatureGroup.eachLayer(function(layer) {
-  layer._popup.setContent(layer.feature.properties.Name + " STATION");
-  });
-  stationFeatureGroup.eachLayer(function(layer) {
+      layer._popup.setContent(layer.feature.properties.Name + " STATION");
       layer.setStyle({
         radius: 4,
         fillColor: "#551A8B",
