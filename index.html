@@ -17,12 +17,23 @@
       <strong> How People Use BART </strong>
       <hr>
 
-      <div class="btn-group btn-group-justified btn-lg btn-group-toggle" id="weektimes" data-toggle="buttons">
+      <div class="mainControl">
+
+        <select class="form-control" id="directionDropdown">
+          <option>Going To:</option>
+          <option>Coming From:</option>
+        </select>
+
+        <div id="stationName"> (Pick a Station on the Map) </div>
+
+      </div>
+
+      <div class="btn-group btn-group-justified btn-lg btn-group-toggle" id="weektimes" role="group" data-toggle="buttons" aria-label="Justified button group">
         <label class="btn btn-warning btn-primary active">
-          <input type="radio"  name="options" id="weekday" autocomplete="off" checked> Weekdays
+          <input type="radio"  class="btn btn-default" name="options" id="weekday" autocomplete="off" checked> Weekdays
         </label>
         <label class="btn btn-warning btn-primary">
-          <input type="radio" name="options" id="weekend" autocomplete="off"> Weekends
+          <input type="radio" class="btn btn-default" name="options" id="weekend" autocomplete="off"> Weekends
         </label>
       </div>
 
@@ -58,6 +69,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="JS/main.js"></script>
     <script src="JS/data.js"></script>
+    <script src="JS/jquery/jquery.splitflap.js"></script>
+
 
   </body>
 </html>

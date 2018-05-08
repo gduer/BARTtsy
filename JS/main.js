@@ -1,7 +1,9 @@
-stations = "https://raw.githubusercontent.com/gduer/BARTtsy/master/bartData.json";
+stations = "https://raw.githubusercontent.com/gduer/BARTtsy/master/bartData_orig.json";
+//stations = ""
+
 lines = "https://raw.githubusercontent.com/gduer/BARTtsy/master/BART_line.json";
 var daytime = 'earlyMorning';
-var code;
+var code = "";
 var weektime = "Weekday";
 
 var map = L.map('map', {
@@ -23,7 +25,11 @@ var customOptions =
 
 function popupName(feature, layer) {
 
-    layer.bindPopup(layer.feature.properties.Name, customOptions);
+    if(code != ""){
+    layer.bindPopup("Coming from: " + layer.feature.properties.Name + ": " + layer.feature.properties[weektime][daytime][stationCode], customOptions);
+    }
+
+    else{layer.bindPopup(layer.feature.properties.Name, customOptions);}
     //bind click
     layer.on('mouseover', function (e) {
       this.openPopup();
@@ -37,6 +43,10 @@ function popupName(feature, layer) {
       code = layer.feature.properties.Code;
       //stationFeatureGroup.setStyle({radius:  Math.sqrt(layer.feature.properties.Weekday.morningPeak.EMBR)*2});
       restyleLayer(layer.feature.properties.Code);
+      $('#stationName').text(layer.feature.properties.Name + " STATION");
+      $('#stationName').css("font-weight", "bold");
+      $('#stationName').css("font-size", "20px");
+      //$('#stationName').splitFlap();
       //this.setStyle({fillColor:"#0f0", radius: 4, opacity: 0.6});
     });
 }
@@ -119,6 +129,9 @@ $(document).ready(function() {
     });
 
 map.on('click', function (e) {
+  $('#stationName').text("(Pick a Station on the Map)");
+  $('#stationName').css("font-weight", "normal");
+  $('#stationName').css("font-size", "16px");
   stationFeatureGroup.eachLayer(function(layer) {
       layer.setStyle({
         radius: 3,

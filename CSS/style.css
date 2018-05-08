@@ -64,4 +64,36 @@ p.main {
       width: 100% !important;
       align-items: center;
       font-weight: bold;
+      padding-left: 0;
+      padding-right: 0;
   }
+
+  #weekday {
+        width: 100% !important;
+    }
+
+  .mainControl{
+    height: 20%;
+    width: 100%;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: grey;
+    border-width: 0.2px;
+    background-color: #cfd8dc;
+    -moz-box-shadow:    inset 0 0 10px #90a4ae;
+    -webkit-box-shadow: inset 0 0 10px #90a4ae;
+    box-shadow:         inset 0 0 10px #90a4ae;
+
+  }
+
+  #directionDropdown{
+    background-color: transparent;
+    border-width: 0;
+    width: 99%;
+    padding-left: 3%;
+    font-size: 18px;
+  }
+
+#stationName{
+  padding:5%;
+}
