@@ -80,8 +80,8 @@ function whenClicked(feature, layer) {
       $('#stationName').css("font-weight", "bold");
       $('#stationName').css("font-size", "20px");
       stationFeatureGroup.eachLayer(function(layer) {
-      if($('#directionDropdown').val() === 'Destination:'){layer._popup.setContent(layer.feature.properties.Name + " to " + name + ": " + String(layer.feature.properties[weektime][daytime][code]) + " passenger(s)");}
-      if($('#directionDropdown').val() === 'Origin:'){layer._popup.setContent(name + " to " + layer.feature.properties.Name + ": " + String(layer.feature.properties[weektime][daytime][code]) + " passenger(s)");}
+      if($('#directionDropdown').val() === 'Destination:'){layer._popup.setContent(layer.feature.properties.Name + " to " + name + ": " + String(layer.feature.properties[weektime][daytime][code]) + " average hourly passenger(s)");}
+      if($('#directionDropdown').val() === 'Origin:'){layer._popup.setContent(name + " to " + layer.feature.properties.Name + ": " + String(layer.feature.properties[weektime][daytime][code]) + " average hourly passenger(s)");}
       if(layer.feature.properties.Name == name){layer._popup.setContent(name + " STATION");}
       });
     });
@@ -134,8 +134,8 @@ $('#daytimes').on('click', function(e){
   pickHour();
   restyleLayer(code);
   stationFeatureGroup.eachLayer(function(layer) {
-  if($('#directionDropdown').val() === 'Destination:'){layer._popup.setContent(layer.feature.properties.Name + " to " + name + ": " + String(layer.feature.properties[weektime][daytime][code]) + " passenger(s)");}
-  if($('#directionDropdown').val() === 'Origin:'){layer._popup.setContent(name + " to " + layer.feature.properties.Name + ": " + String(layer.feature.properties[weektime][daytime][code]) + " passenger(s)");}
+  if($('#directionDropdown').val() === 'Destination:'){layer._popup.setContent(layer.feature.properties.Name + " to " + name + ": " + String(layer.feature.properties[weektime][daytime][code]) + " average hourly passenger(s)");}
+  if($('#directionDropdown').val() === 'Origin:'){layer._popup.setContent(name + " to " + layer.feature.properties.Name + ": " + String(layer.feature.properties[weektime][daytime][code]) + " average hourly passenger(s)");}
   if(layer.feature.properties.Name == name){layer._popup.setContent(name + " STATION");}
   });}, 0);
 
@@ -146,8 +146,8 @@ $('#weektimes').on('click', function(e){
   pickDay();
   restyleLayer(code);
   stationFeatureGroup.eachLayer(function(layer) {
-  if($('#directionDropdown').val() === 'Destination:'){layer._popup.setContent(layer.feature.properties.Name + " to " + name + ": " + String(layer.feature.properties[weektime][daytime][code]) + " passenger(s)");}
-  if($('#directionDropdown').val() === 'Origin:'){layer._popup.setContent(name + " to " + layer.feature.properties.Name + ": " + String(layer.feature.properties[weektime][daytime][code]) + " passenger(s)");}
+  if($('#directionDropdown').val() === 'Destination:'){layer._popup.setContent(layer.feature.properties.Name + " to " + name + ": " + String(layer.feature.properties[weektime][daytime][code]) + " average hourly passenger(s)");}
+  if($('#directionDropdown').val() === 'Origin:'){layer._popup.setContent(name + " to " + layer.feature.properties.Name + ": " + String(layer.feature.properties[weektime][daytime][code]) + " average hourly passenger(s)");}
   if(layer.feature.properties.Name == name){layer._popup.setContent(name + " STATION");}
   });}, 0);
 
